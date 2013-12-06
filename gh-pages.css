@@ -1,0 +1,29 @@
+body {
+  max-width: 550px;
+  margin: 30px auto;
+  font: 14px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #5C5C5A;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 5px 0;
+  font-weight: normal;
+  color: #3F3F3C;
+}
+
+header {
+  margin: 40px 0;
+}
+
+pre {
+  background: #EEE;
+  padding: 5px;
+}
+
+a, a:visited {
+  color: #d57d7c;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Keep the aspect ratio</title>
+
+  <link rel="stylesheet" href="gh-pages.css">
+  <style>
+    html, body { height: 100%; }
+    div {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 5px;
+      background: tomato;
+      color: white;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    #first {
+      width: 100%;
+    }
+    #second {
+      height: 20%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Auto growing textarea</h1>
+    <a href="https://github.com/loonkwil/jquery.keep-ratio">https://github.com/loonkwil/jquery.keep-ratio</a>
+  </header>
+
+  <pre>$('#first').keepRatio({ ratio: 16/9, calculate: 'height' });</pre>
+  <div id="first"></div>
+
+  <pre>$('#second').keepRatio({ ratio: 4/3, calculate: 'width' });</pre>
+  <div id="second"></div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="jquery.keep-ratio.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $('#first').keepRatio({ ratio: 16/9, calculate: 'height' });
+      $('#second').keepRatio({ ratio: 4/3, calculate: 'width' });
+
+      var printBoxSize = function($el) {
+        var w = $el.width();
+        var h = $el.height();
+        $el.html(w + ' x ' + h + ' = ' + (w/h).toString().substr(0, 4));
+      };
+
+      var $div = $('div[id]');
+      var resizeEventHandler = function() {
+        $div.each(function() { printBoxSize($(this)); });
+      };
+
+      $(window).on('resize', resizeEventHandler);
+      resizeEventHandler();
+    });
+  </script>
+</body>
+</html>
