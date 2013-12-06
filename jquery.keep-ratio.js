@@ -12,11 +12,12 @@
   /**
    * @type {{ratio: number, calculate: string}}
    */
-  var defaultOptions = { ratio: 4/3, calculate: 'height' };
+  var defaultOptions = { ratio: 4/3, calculate: 'height', delay: null };
 
   /**
    * @param {jQuery} $el
    * @param {{ratio: number, calculate: string}} options
+   * @return {jQuery}
    */
   var resize = function($el, options) {
     if( options.calculate === 'height' ) {
@@ -27,6 +28,19 @@
       var height = $el.height();
       $el.width(Math.round( height * options.ratio ));
     }
+
+    return $el;
+  };
+
+  /**
+   * @param {jQuery} $el
+   * @param {{ratio: number, calculate: string}} options
+   * @return {jQuery}
+   */
+  var resizeAll = function($els, options) {
+    return $els.each(function() {
+      resize($(this), options);
+    });
   };
 
 
@@ -41,21 +55,21 @@
 
     var resizeTick = null;
     $(window).on('resize', function() {
+      if( !options.delay ) {
+        resizeAll($boxes, options);
+        return;
+      }
+
       if( resizeTick !== null ) {
         return;
       }
 
       resizeTick = window.setTimeout(function() {
-        $boxes.each(function() {
-          resize($(this), options);
-        });
-
+        resizeAll($boxes, options);
         resizeTick = null;
-      }, 100);
+      }, options.delay);
     });
 
-    return $boxes.each(function() {
-      resize($(this), options);
-    });
+    return resizeAll($boxes, options);
   };
 }(window));
