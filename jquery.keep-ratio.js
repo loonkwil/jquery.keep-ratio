@@ -2,31 +2,45 @@
  * A jQuery plugin for keeping the aspect ratio
  * https://github.com/loonkwil/jquery.keep-ratio
  *
- * Date: Dec 6 2013
+ * Date: Dec 10 2013
  */
 (function(window, undefined) {
   "use strict";
 
   var $ = window.jQuery;
+  var raf = window.requestAnimationFrame;
 
   /**
    * @type {{ratio: number, calculate: string}}
    */
-  var defaultOptions = { ratio: 4/3, calculate: 'height', delay: null };
+  var defaultOptions = { ratio: 4/3, calculate: 'height' };
 
   /**
    * @param {jQuery} $el
    * @param {{ratio: number, calculate: string}} options
+   * @param {boolean} forceRendering
    * @return {jQuery}
    */
-  var resize = function($el, options) {
+  var resize = function($el, options, forceRendering) {
+    var resizeFunction;
     if( options.calculate === 'height' ) {
       var width = $el.width();
-      $el.height(Math.round( width / options.ratio ));
+      resizeFunction = function() {
+        $el.height(Math.round( width / options.ratio ));
+      };
     }
     else {
       var height = $el.height();
-      $el.width(Math.round( height * options.ratio ));
+      resizeFunction = function() {
+        $el.width(Math.round( height * options.ratio ));
+      };
+    }
+
+    if( forceRendering ) {
+      resizeFunction();
+    }
+    else {
+      raf(resizeFunction);
     }
 
     return $el;
@@ -35,11 +49,12 @@
   /**
    * @param {jQuery} $el
    * @param {{ratio: number, calculate: string}} options
+   * @param {boolean} forceRendering
    * @return {jQuery}
    */
-  var resizeAll = function($els, options) {
+  var resizeAll = function($els, options, forceRendering) {
     return $els.each(function() {
-      resize($(this), options);
+      resize($(this), options, forceRendering);
     });
   };
 
@@ -53,23 +68,10 @@
 
     var $boxes = this;
 
-    var resizeTick = null;
     $(window).on('resize', function() {
-      if( !options.delay ) {
-        resizeAll($boxes, options);
-        return;
-      }
-
-      if( resizeTick !== null ) {
-        return;
-      }
-
-      resizeTick = window.setTimeout(function() {
-        resizeAll($boxes, options);
-        resizeTick = null;
-      }, options.delay);
+      resizeAll($boxes, options);
     });
 
-    return resizeAll($boxes, options);
+    return resizeAll($boxes, options, true);
   };
 }(window));

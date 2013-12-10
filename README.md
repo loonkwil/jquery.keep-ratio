@@ -6,6 +6,12 @@ Example usage: http://loonkwil.github.io/jquery.keep-ratio/
 
 # Install
 
+Requirements [Bower](https://github.com/bower/bower)
+
+```bash
+bower install
+```
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -15,8 +21,9 @@ Example usage: http://loonkwil.github.io/jquery.keep-ratio/
 <body>
   <div></div>
 
-  <script src="js/jquery.js"></script>
-  <script src="js/jquery.auto-grow.js"></script>
+  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/request-animation-frame/rAF.js"></script>
+  <script src="bower_components/jquery.keep-ratio/jquery.keep-ratio.js"></script>
   <script type="text/javascript">
     $(function() {
       $('div').keepRatio({ ratio: 4/3, calculate: 'width' });
