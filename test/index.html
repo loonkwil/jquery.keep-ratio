@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Keep ratio tests</title>
+
+  <link rel="stylesheet" href="../bower_components/qunit/qunit/qunit.css">
+  <style>
+    section { width: 100px; height: 100px; }
+    .max-width { width: 100%; }
+    .max-height { height: 100%; }
+  </style>
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture">
+    <section>
+      <div class="max-width"></div>
+    </section>
+    <section>
+      <div class="max-height"></div>
+    </section>
+  </div>
+
+  <script src="../bower_components/jquery/jquery.min.js"></script>
+  <script src="../bower_components/request-animation-frame/rAF.js"></script>
+  <script src="../src/jquery.keep-ratio.js"></script>
+
+  <script src="../bower_components/qunit/qunit/qunit.js"></script>
+  <script src="tests.js"></script>
+</body>
+</html>

@@ -1,8 +1,11 @@
 {
   "name": "jquery.keep-ratio",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
     "jquery": "~2.0",
     "request-animation-frame": "https://gist.github.com/1579671.git"
+  },
+  "devDependencies": {
+    "qunit": "~1.13"
   }
 }
