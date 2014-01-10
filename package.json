@@ -1,0 +1,19 @@
+{
+  "name": "jquery.keep-ratio",
+  "description": "A jQuery plugin for keeping the aspect ratio",
+  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:loonkwil/jquery.keep-ratio.git"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.4",
+    "grunt-contrib-qunit": "~0.3"
+  }
+}
