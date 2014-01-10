@@ -1,5 +1,7 @@
 # Keep Ratio
 
+[![Build Status](https://travis-ci.org/loonkwil/jquery.keep-ratio.png)](https://travis-ci.org/loonkwil/jquery.keep-ratio)
+
 A jQuery plugin for keeping the aspect ratio
 
 Example usage: http://loonkwil.github.io/jquery.keep-ratio/
