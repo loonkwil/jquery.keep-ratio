@@ -11,7 +11,7 @@ Example usage: http://loonkwil.github.io/jquery.keep-ratio/
 Requirements [Bower](https://github.com/bower/bower)
 
 ```bash
-bower install git@github.com:loonkwil/jquery.keep-ratio.git --save
+bower install git://github.com/loonkwil/jquery.keep-ratio.git --save
 ```
 
 ```html
