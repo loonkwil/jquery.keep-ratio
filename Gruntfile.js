@@ -9,7 +9,7 @@ module.exports = function(grunt) {
       files: ['test/index.html']
     },
     jshint: {
-      all: ['*.js', 'test/**/*.js']
+      all: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js']
     },
     bump: {
       options: {

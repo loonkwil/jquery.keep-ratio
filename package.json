@@ -1,7 +1,7 @@
 {
   "name": "jquery.keep-ratio",
   "description": "A jQuery plugin for keeping the aspect ratio",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "git@github.com:loonkwil/jquery.keep-ratio.git"
