@@ -4,7 +4,7 @@
  *
  * Date: Sept 14 2014
  */
-(function(window, undefined) {
+(function(window) {
     'use strict';
 
     var $ = window.jQuery;
@@ -18,7 +18,7 @@
     /**
      * @param {jQuery} $el
      * @param {{ratio: number, calculate: string}} options
-     * @param {boolean} forceRendering
+     * @param {boolean=} forceRendering
      * @return {jQuery}
      */
     var resize = function($el, options, forceRendering) {
@@ -47,7 +47,7 @@
     /**
      * @param {jQuery} $els
      * @param {{ratio: number, calculate: string}} options
-     * @param {boolean} forceRendering
+     * @param {boolean=} forceRendering
      * @return {jQuery}
      */
     var resizeAll = function($els, options, forceRendering) {
