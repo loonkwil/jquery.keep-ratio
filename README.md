@@ -24,6 +24,7 @@ bower install keep-ratio --save
   <div></div>
 
   <script src="bower_components/jquery/jquery.js"></script>
+  <!-- For older browsers (http://caniuse.com/#feat=requestanimationframe) -->
   <script src="bower_components/request-animation-frame/rAF.js"></script>
   <script src="bower_components/jquery.keep-ratio/dist/jquery.keep-ratio.min.js"></script>
   <script type="text/javascript">
