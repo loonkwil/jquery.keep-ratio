@@ -19,6 +19,7 @@
     "gulp-jshint": "^1.8.0",
     "gulp-load-plugins": "^0.6.0",
     "gulp-qunit": "^0.3.0",
-    "nopt": "^3.0.0"
+    "nopt": "^3.0.0",
+    "gulp-jscs": "^1.1.0"
   }
 }

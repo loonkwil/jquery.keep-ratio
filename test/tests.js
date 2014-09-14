@@ -5,8 +5,9 @@
     var raf = window.requestAnimationFrame;
     var q = window.QUnit;
 
-    var $calcWidth, $calcHeight;
-    var ratio = 4/3;
+    var $calcWidth;
+    var $calcHeight;
+    var ratio = 4 / 3;
 
     q.testStart(function() {
         var $sections = $('section');

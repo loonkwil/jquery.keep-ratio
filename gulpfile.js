@@ -139,7 +139,7 @@ gulp.task('qunit', function() {
     return gulp.src(config.path.test + '/index.html').pipe(plugins.qunit());
 });
 
-gulp.task('lint', [ 'jshint' ]);
+gulp.task('lint', [ 'jshint', 'jscs' ]);
 
 gulp.task('jshint', function() {
     var files = config.filesForAnalyze.js;
@@ -148,4 +148,11 @@ gulp.task('jshint', function() {
     return gulp.src(files).
         pipe(plugins.jshint()).
         pipe(plugins.jshint.reporter());
+});
+
+gulp.task('jscs', function() {
+    var files = config.filesForAnalyze.js;
+    if (files.length === 0) { return; }
+
+    return gulp.src(files).pipe(plugins.jscs());
 });

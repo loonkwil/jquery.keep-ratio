@@ -2,7 +2,7 @@
  * A jQuery plugin for keeping the aspect ratio
  * https://github.com/loonkwil/jquery.keep-ratio
  *
- * Date: Dec 10 2013
+ * Date: Sept 14 2014
  */
 (function(window, undefined) {
     'use strict';
@@ -13,7 +13,7 @@
     /**
      * @type {{ratio: number, calculate: string}}
      */
-    var defaultOptions = { ratio: 4/3, calculate: 'height' };
+    var defaultOptions = { ratio: 4 / 3, calculate: 'height' };
 
     /**
      * @param {jQuery} $el
@@ -23,23 +23,21 @@
      */
     var resize = function($el, options, forceRendering) {
         var resizeFunction;
-        if( options.calculate === 'height' ) {
+        if (options.calculate === 'height') {
             var width = $el.width();
             resizeFunction = function() {
-                $el.height(Math.round( width / options.ratio ));
+                $el.height(Math.round(width / options.ratio));
             };
-        }
-        else {
+        } else {
             var height = $el.height();
             resizeFunction = function() {
-                $el.width(Math.round( height * options.ratio ));
+                $el.width(Math.round(height * options.ratio));
             };
         }
 
-        if( forceRendering ) {
+        if (forceRendering) {
             resizeFunction();
-        }
-        else {
+        } else {
             raf(resizeFunction);
         }
 
@@ -47,7 +45,7 @@
     };
 
     /**
-     * @param {jQuery} $el
+     * @param {jQuery} $els
      * @param {{ratio: number, calculate: string}} options
      * @param {boolean} forceRendering
      * @return {jQuery}
@@ -66,7 +64,7 @@
     $.fn.keepRatio = function(options) {
         options = $.extend({}, defaultOptions, options);
 
-        var $boxes = this;
+        var $boxes = $(this);
 
         $(window).on('resize', function() {
             resizeAll($boxes, options);
