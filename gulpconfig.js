@@ -10,6 +10,16 @@ config.path = {
     test: 'test'
 };
 
+// Files for linting and stuff like that
+config.filesForAnalyze = {
+    js: [
+        config.path.src + '/**/*.js',
+        config.path.test + '/**/*.js',
+        'gulpconfig.js',
+        'gulpfile.js'
+    ]
+};
+
 // Plugins preferences
 config.plugins = {
     // Bumps the version number (and create a git commit and tag)

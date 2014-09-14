@@ -1,4 +1,4 @@
-;(function(window, undefined) {
+(function(window, undefined) {
     'use strict';
 
     var $ = window.jQuery;
@@ -8,7 +8,7 @@
     var $calcWidth, $calcHeight;
     var ratio = 4/3;
 
-    q.testStart(function(details) {
+    q.testStart(function() {
         var $sections = $('section');
         $calcHeight = $sections.eq(0).find('div');
         $calcWidth = $sections.eq(1).find('div');
@@ -19,7 +19,7 @@
 
 
     q.test('test initial dimension', function() {
-        expect(2);
+        q.expect(2);
 
         q.stop();
         raf(function() {
@@ -39,7 +39,7 @@
     });
 
     q.test('test dimension after resizing', function() {
-        expect(2);
+        q.expect(2);
 
         (function() {
             var w = 30;

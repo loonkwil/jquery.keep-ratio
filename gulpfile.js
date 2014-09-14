@@ -130,9 +130,22 @@ gulp.task('bump-tag', function(cb) {
     plugins.git.tag(version, message, null, cb);
 });
 
-// Task for testing
-gulp.task('test', [ 'qunit' ]);
+// Task for testing and linting
+// Usage: `gulp test` or if you want to run the testing and the linting tasks
+// separately use: `gulp qunit` and `gulp lint`
+gulp.task('test', [ 'qunit', 'lint' ]);
 
 gulp.task('qunit', function() {
     return gulp.src(config.path.test + '/index.html').pipe(plugins.qunit());
+});
+
+gulp.task('lint', [ 'jshint' ]);
+
+gulp.task('jshint', function() {
+    var files = config.filesForAnalyze.js;
+    if (files.length === 0) { return; }
+
+    return gulp.src(files).
+        pipe(plugins.jshint()).
+        pipe(plugins.jshint.reporter());
 });
