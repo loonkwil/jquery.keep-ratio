@@ -6,7 +6,7 @@ A jQuery plugin for keeping the aspect ratio
 
 Example usage: http://loonkwil.github.io/jquery.keep-ratio/
 
-# Install
+## Install
 
 Requirements [Bower](https://github.com/bower/bower)
 
@@ -33,3 +33,13 @@ bower install keep-ratio --save
   </script>
 </body>
 ```
+
+## How to make your own build
+
+Requirements: [NodeJs](http://nodejs.org), [Bower](http://bower.io),
+[Gulp](http://gulpjs.com)
+
+ 1. `bower install`
+ 2. `npm install`
+ 3. `npm test`
+ 4. `gulp dist` or just `gulp`
