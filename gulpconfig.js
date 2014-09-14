@@ -17,6 +17,12 @@ config.filesForAnalyze = {
         config.path.test + '/**/*.js',
         'gulpconfig.js',
         'gulpfile.js'
+    ],
+    json: [
+        '.jscs.json',
+        '.jshintrc',
+        'bower.json',
+        'package.json'
     ]
 };
 
