@@ -1,2 +1,4 @@
 /node_modules
-/bower_components/qunit
+/bower_components/qunit/
+/bower_components/jquery/*
+!/bower_components/jquery/dist
