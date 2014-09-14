@@ -91,7 +91,7 @@ argv.release = argv.release || 'patch';
 
 // Task for bumping the version number
 // Usage: `gulp bump [--release <version>]`
-gulp.task('bump', [ 'bump-version-number' ], function() {
+gulp.task('bump', [ 'dist', 'bump-version-number' ], function() {
     return gulp.start('bump-commit-and-tag');
 });
 
@@ -118,7 +118,8 @@ gulp.task('bump-commit', function() {
     var version = 'v' + getVersionNumberFromFile(packageFiles);
     var message = 'Release ' + version;
 
-    return gulp.src(packageFiles).pipe(plugins.git.commit(message));
+    var filesToCommit = [].concat(packageFiles, config.path.dist + '/**');
+    return gulp.src(filesToCommit).pipe(plugins.git.commit(message));
 });
 
 gulp.task('bump-tag', function(cb) {
@@ -164,4 +165,25 @@ gulp.task('jsonlint', function() {
     return gulp.src(files).
         pipe(plugins.jsonlint()).
         pipe(plugins.jsonlint.reporter());
+});
+
+// Task for distributing
+// Usage: `gulp dist` or `gulp`
+gulp.task('default', [ 'dist' ]);
+
+gulp.task('dist', [ 'dist-concat' ], function() {
+    return gulp.start('dist-minify');
+});
+
+gulp.task('dist-concat', function() {
+    return gulp.src(config.path.src + '/**/*.js').
+        pipe(plugins.concat('jquery.keep-ratio.js')).
+        pipe(gulp.dest(config.path.dist));
+});
+
+gulp.task('dist-minify', function() {
+    return gulp.src(config.path.dist + '/jquery.keep-ratio.js').
+        pipe(plugins.concat('jquery.keep-ratio.js.min.js')).
+        pipe(plugins.uglify()).
+        pipe(gulp.dest(config.path.dist));
 });

@@ -7,7 +7,8 @@ var config = {};
 // Don't use leading or trailing slashes!
 config.path = {
     src: 'src',
-    test: 'test'
+    test: 'test',
+    dist: 'dist'
 };
 
 // Files for linting and stuff like that
