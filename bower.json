@@ -5,7 +5,8 @@
     "test",
     "**/.*",
     "bower.json",
-    "Gruntfile.js",
+    "gulpconfig.js",
+    "gulpfile.js",
     "package.json",
     "README.md"
   ],
