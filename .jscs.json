@@ -1,0 +1,61 @@
+{
+  "requireCurlyBraces": [
+    "if", "else", "for", "while", "do", "try", "catch", "switch"
+  ],
+  "requireSpaceAfterKeywords": [
+    "if", "else", "for", "while", "do", "switch", "return", "try", "catch"
+  ],
+  "requireParenthesesAroundIIFE": true,
+  "requireSpacesInFunctionExpression": {
+    "beforeOpeningCurlyBrace": true
+  },
+  "disallowSpacesInFunctionExpression": {
+      "beforeOpeningRoundBrace": true
+  },
+  "disallowMultipleVarDecl": true,
+  "disallowEmptyBlocks": true,
+  "requireSpacesInsideObjectBrackets": "allButNested",
+  "requireSpacesInsideArrayBrackets": "allButNested",
+  "disallowSpacesInsideParentheses": true,
+  "disallowSpaceAfterObjectKeys": true,
+  "requireCommaBeforeLineBreak": true,
+  "requireOperatorBeforeLineBreak": [
+    "?", "+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<="
+  ],
+  "requireSpacesInConditionalExpression": {
+    "afterTest": true,
+    "beforeConsequent": true,
+    "afterConsequent": true,
+    "beforeAlternate": true
+  },
+  "disallowSpaceAfterPrefixUnaryOperators": [ "++", "--", "+", "-", "~", "!" ],
+  "disallowSpaceBeforePostfixUnaryOperators": [ "++", "--" ],
+  "requireSpaceBeforeBinaryOperators": [
+    "+", "-", "/", "*", "=", "==", "===", "!=", "!=="
+  ],
+  "disallowSpaceBeforeBinaryOperators": [
+    ","
+  ],
+  "requireSpaceAfterBinaryOperators": [
+    "+", "-", "/", "*", "=", "==", "===", "!=", "!=="
+  ],
+  "requireCamelCaseOrUpperCaseIdentifiers": true,
+  "disallowKeywords": [ "with" ],
+  "disallowMultipleLineStrings": true,
+  "validateLineBreaks": "LF",
+  "validateQuoteMarks": "'",
+  "disallowMixedSpacesAndTabs": true,
+  "disallowTrailingWhitespace": true,
+  "disallowKeywordsOnNewLine": [ "else", "else if", "catch", "finally" ],
+  "requireLineFeedAtFileEnd": true,
+  "maximumLineLength": 80,
+  "requireCapitalizedConstructors": true,
+  "safeContextKeyword": "that",
+  "requireDotNotation": true,
+  "disallowYodaConditions": true,
+  "validateJSDoc": {
+    "checkParamNames": true,
+    "requireParamTypes": true
+  },
+  "excludeFiles": [ "node_modules/**", "bower_components/**", "**.min.js" ]
+}

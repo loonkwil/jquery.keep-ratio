@@ -1,0 +1,30 @@
+{
+  "maxlen": 80,
+  "forin": true,
+  "indent": 4,
+  "strict": true,
+  "trailing": true,
+  "unused": true,
+  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "quotmark": "single",
+  "undef": true,
+  "bitwise": true,
+  "freeze": true,
+  "noempty": true,
+  "nonbsp": true,
+  "nonew": true,
+  "plusplus": true,
+  "maxparams": 5,
+  "maxdepth": 5,
+
+  "maxerr": 20,
+
+  "browser": true,
+  "jquery": true
+}
