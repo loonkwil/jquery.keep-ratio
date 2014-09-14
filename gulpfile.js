@@ -183,7 +183,7 @@ gulp.task('dist-concat', function() {
 
 gulp.task('dist-minify', function() {
     return gulp.src(config.path.dist + '/jquery.keep-ratio.js').
-        pipe(plugins.concat('jquery.keep-ratio.js.min.js')).
+        pipe(plugins.concat('jquery.keep-ratio.min.js')).
         pipe(plugins.uglify()).
         pipe(gulp.dest(config.path.dist));
 });

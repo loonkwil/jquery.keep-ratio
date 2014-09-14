@@ -25,7 +25,7 @@ bower install git://github.com/loonkwil/jquery.keep-ratio.git --save
 
   <script src="bower_components/jquery/jquery.js"></script>
   <script src="bower_components/request-animation-frame/rAF.js"></script>
-  <script src="bower_components/jquery.keep-ratio/dist/jquery.keep-ratio.js.min.js"></script>
+  <script src="bower_components/jquery.keep-ratio/dist/jquery.keep-ratio.min.js"></script>
   <script type="text/javascript">
     $(function() {
       $('div').keepRatio({ ratio: 4/3, calculate: 'width' });
