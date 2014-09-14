@@ -15,6 +15,6 @@
     "request-animation-frame": "https://gist.github.com/1579671.git"
   },
   "devDependencies": {
-    "qunit": "~1.13"
+    "qunit": "^1.15.0"
   }
 }
